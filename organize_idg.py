@@ -22,12 +22,14 @@ source_dir = args["source"]
 SPLIT_SIZE = float(args["split"])
 
 # name directories
-!mkdir "POSITIVES/"
-!mkdir "NEGATIVES/"
-!mkdir "training/POSITIVES/"
-!mkdir "training/NEGATIVES/"
-!mkdir "testing/POSITIVES/"
-!mkdir "testing/NEGATIVES/"
+os.mkdir("POSITIVES/")
+os.mkdir("NEGATIVES/")
+os.mkdir("training/")
+os.mkdir("training/POSITIVES/")
+os.mkdir("training/NEGATIVES/")
+os.mkdir("testing/")
+os.mkdir("testing/POSITIVES/")
+os.mkdir("testing/NEGATIVES/")
 
 pos_dir = "POSITIVES/"
 neg_dir = "NEGATIVES/"
