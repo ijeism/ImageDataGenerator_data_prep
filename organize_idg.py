@@ -17,11 +17,11 @@ ap.add_argument("-p", "--split", default=0.7, type=float, help = "train/test spl
 
 args = vars(ap.parse_args())
 
-# create var names for all arguments
+# create var names for arguments
 source_dir = args["source"]
 SPLIT_SIZE = float(args["split"])
 
-# name directories
+# create directories
 os.mkdir("POSITIVES/")
 os.mkdir("NEGATIVES/")
 os.mkdir("training/")
@@ -31,6 +31,7 @@ os.mkdir("testing/")
 os.mkdir("testing/POSITIVES/")
 os.mkdir("testing/NEGATIVES/")
 
+# name directories
 pos_dir = "POSITIVES/"
 neg_dir = "NEGATIVES/"
 training_pos = "training/POSITIVES/"
