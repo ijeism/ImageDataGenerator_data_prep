@@ -6,8 +6,10 @@ import tensorflow as tf
 import pandas as pd
 import argparse
 
+from shutil import copyfile
 
-""" Organizes a directory of raw, labelled images (class deductable from img path)
+
+""" Organizes a directory of raw, labelled images (class identifiable from img path)
 into required structure for use with Tensorflow ImageDataGenerator.
 """
 
@@ -33,11 +35,11 @@ list_dirs = [path for path in args["list_dirs"].split(",")]
 #     <POS>
 #     <NEG>
 #     <training>
-#     <training> <pos>
-#     <training> <neg>
-#     <testing>
-#     <test> <pos>
-#     <test> <neg>
+#           <pos>
+#           <neg>
+#     <test>
+#           <pos>
+#           <neg>
 for dir in list_dirs:
     os.mkdir(dir)
 
@@ -49,7 +51,6 @@ training_pos = list_dirs[4]
 training_neg = list_dirs[5]
 test_pos = list_dirs[7]
 test_neg = list_dirs[8]
-
 
 
 
